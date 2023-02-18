@@ -1,16 +1,15 @@
 ######################## default configuration ####################
-baseURL = "https://examplesite.com"
-title = "Eventre Hugo | Event Management Template"
+baseURL = "https://2020.openinfra.id"
+title = "OpenInfra Days Indonesia 2020"
 theme = "eventre-hugo"
-#themesDir = "../.."
 # post pagination
-paginate = "3"
+paginate = "2"
 # post excerpt
 summaryLength = "10"
 # google analytics
-googleAnalytics = "" # example : UA-123-45
+googleAnalytics = "G-692CBXDF30" # example : UA-123-45
 # disqus short name
-disqusShortname = "themefisher-template" # get your shortname form here : https://disqus.com
+disqusShortname = "" # get your shortname form here : https://disqus.com
 # disable language
 disableLanguages = [] # desable language from here
 
@@ -81,63 +80,62 @@ url = "speaker"
 weight = 3
 
 [[menu.main]]
-name = "Blog"
-url = "blog"
+name = "Schedule"
+url = "schedule"
 weight = 4
 
 [[menu.main]]
+name = "Gallery"
+url = "https://www.flickr.com/photos/182934431@N07/"
 weight = 5
-name = "Pages"
-hasChildren = true
 
-  [[menu.main]]
-  parent = "Pages"
-  name = "Gallery"
-  url = "gallery"
+[[menu.main]]
+name = "FAQ"
+url = "faq"
+weight = 6
 
-  [[menu.main]]
-  parent = "Pages"
-  name = "FAQ"
-  url = "faq"
+[[menu.main]]
+name = "Organizer"
+url = "organizer"
+weight = 7
 
-  [[menu.main]]
-  parent = "Pages"
-  name = "Pricing"
-  url = "pricing"
-
-  [[menu.main]]
-  parent = "Pages"
-  name = "Schedule"
-  url = "schedule"
-
-  [[menu.main]]
-  parent = "Pages"
-  name = "Testimonial"
-  url = "testimonial"
-  
 [[menu.main]]
 name = "Contact"
 url = "contact"
-weight = 6
+weight = 8
 
+#[[menu.main]]
+#weight = 5
+#name = "Pages"
+#hasChildren = true
 
+#  [[menu.main]]
+#  parent = "Pages"
+#  name = "Pricing"
+#  url = "pricing"
+
+#  [[menu.main]]
+#  parent = "Pages"
+#  name = "News"
+#  url = "blog"
 
 #################### default parameters ################################
 [params]
 logo = "images/logo.png"
+images = ["images/logo.png"]
 logo_footer = "images/footer-logo.png"
 logo_width = "100px"
 # Meta data
-description = "This is meta description"
-author = "Themefisher"
+description = "Indonesia OpenInfra Days 2020"
+author = "#IOID21"
 # contact form action
-contact_form_action = "#" # contact form works with https://formspree.io
+contact_form_action = "https://formspree.io/f/mrgrlwgq"
 # copyright
-copyright = "Designed By [Themefisher](https://themefisher.com/) & Developed By [Gethugothemes](https://gethugothemes.com/)"
+copyright = "Powered by [IMTEK](https://imtek.id/) for [OpenStack Indonesia](https://openstack.id)"
 
 # Preloader
 [params.preloader]
-enable = true
+enable = false
 preloader = "" # use jpg, png, svg or gif format.
 
 # Navigation button
@@ -145,11 +143,11 @@ preloader = "" # use jpg, png, svg or gif format.
 enable = true
 label = "Buy Ticket"
 icon = "images/icon/ticket.png"
-link = "/"
+link = "pricing"
 
 # Subscription
 [params.subscription]
-enable = true
+enable = false
 title = "Subscribe to Our Newsletter"
 content = "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusm tempor"
 # mailchimp subsciption
@@ -158,8 +156,8 @@ mailchimp_form_name = "b_463ee871f45d2d93748e77cad_a0a2c6d074" # replace this co
 
 # google map
 [params.map]
-enable = true
-gmap_api = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBu5nZKbeK-WHQ70oqOWo-_4VmwOwKP9YQ"
+enable = false
+gmap_api = "#"
 map_latitude = "51.5223477"
 map_longitude = "-0.1622023"
 map_marker = "images/marker.png"
@@ -170,31 +168,36 @@ link = "#"
 
 # cookies
 [params.cookies]
-enable = true
+enable = false
 expire_days = 2
 
 ############################# social site ########################
 [[params.social]]
 title = "facebook"
 icon = "fa-facebook" # fontawesome icon pack v4.7 https://fontawesome.com/v4.7.0/icons/
-link = "#"
+link = "https://www.facebook.com/groups/openstackindo"
 
 [[params.social]]
 title = "twitter"
 icon = "fa-twitter" # fontawesome icon pack v4.7 https://fontawesome.com/v4.7.0/icons/
-link = "#"
+link = "https://twitter.com/openstackindo"
 
 [[params.social]]
-title = "instagram"
-icon = "fa-instagram" # fontawesome icon pack v4.7 https://fontawesome.com/v4.7.0/icons/
-link = "#"
+title = "youtube"
+icon = "fa-youtube-play" # fontawesome icon pack v4.7 https://fontawesome.com/v4.7.0/icons/
+link = "https://www.youtube.com/OpenStackIndonesia"
+
+[[params.social]]
+title = "telegram"
+icon = "fa-telegram" # fontawesome icon pack v4.7 https://fontawesome.com/v4.7.0/icons/
+link = "https://t.me/openstackindo"
 
 [[params.social]]
 title = "github"
 icon = "fa-github" # fontawesome icon pack v4.7 https://fontawesome.com/v4.7.0/icons/
-link = "#"
+link = "https://github.com/openstackindo"
 
 [[params.social]]
-title = "linkedin"
-icon = "fa-linkedin" # fontawesome icon pack v4.7 https://fontawesome.com/v4.7.0/icons/
-link = "#"
+title = "meetup"
+icon = "fa-meetup" # fontawesome icon pack v4.7 https://fontawesome.com/v4.7.0/icons/
+link = "https://www.meetup.com/Indonesia-OpenStack-User-Group/"
