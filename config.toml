@@ -1,5 +1,5 @@
 ######################## default configuration ####################
-baseURL = "https://2020.openinfra.id"
+baseURL = "http://localhost:8080"
 title = "OpenInfra Days Indonesia 2020"
 theme = "eventre-hugo"
 # post pagination
