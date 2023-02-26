@@ -1,0 +1,110 @@
+{{ define "main" }}
+<section class="section single-speaker">
+  <div class="container">
+    <div class="block">
+      <div class="row">
+        <div class="col-lg-5 col-md-6 align-self-md-center">
+          <div class="image-block">
+            <img src="{{ .Params.image | absURL }}" class="img-fluid" alt="{{ .Title }}">
+          </div>
+        </div>
+        <div class="col-lg-7 col-md-6 align-self-center">
+          <div class="content-block">
+            <div class="name">
+              <h3>{{ .Title }}</h3>
+            </div>
+            <div class="profession">
+              <p>{{ .Params.designation | markdownify }}</p>
+            </div>
+            <div class="details">
+              {{ .Content }}
+            </div>
+            <div class="social-profiles">
+              <h5>Social Profiles</h5>
+              <ul class="list-inline social-list">
+                {{ range .Params.social}}
+                <li class="list-inline-item">
+                  <a href="{{ .link | safeURL }}"><i class="fa {{ .icon }}"></i></a>
+                </li>
+                {{ end }}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="block-2">
+      <h2>Watch the presentation</h2>
+      <div class="row">
+        {{ if .Params.presentation_info.enable }}
+        {{ with .Params.presentation_info }}
+        {{ if .videoEnable }}
+        <div class="col-md-12">
+          <iframe width="853" height="480" src="{{ .videoUrl | safeURL }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        {{ end }}
+        {{ if .anotherPresentationEnable }}
+        <div class="col-md-12 mt-4">
+          <h5>Watch another presentation</h5>
+          <ul class="ml-3 list-group list-group-flush">
+          {{ range .anotherPresentation }}
+            <li>
+              <a style="color: #ed1944;" href="{{ .link | safeURL }}">{{ .title }}</a>
+            </li>
+          {{ end }}
+          <ul>
+        </div>
+        {{ end }}
+        {{ if not .slideEmbedDisable }}
+        <div class="col-md-12 mt-4">
+          <h2>Presentation Slide</h2>
+          <iframe src="{{ .slideEmbedPath }}#view=Fit" width="100%" height="500px">
+        </div>
+        {{ end }}
+        {{ end }}
+        {{ end }}
+
+        {{ if .Params.personal_info.enable }}
+        {{ with .Params.personal_info }}
+        <div class="col-md-6">
+          <div class="personal-info">
+            <h5>{{ .title | markdownify}}</h5>
+            <p>{{ .content | markdownify }}</p>
+            <ul class="m-0 p-0">
+              {{ range .bulletpoints }}
+              <li>{{ . | markdownify }}</li>
+              {{ end }}
+            </ul>
+          </div>
+        </div>
+        {{ end }}
+        {{ end }}
+        
+        {{ if .Params.skills.enable }}
+        {{ with .Params.skills }}
+        <div class="col-md-6">
+          <div class="skills">
+            <h5>{{ .title | markdownify }}</h5>
+            <p>{{ .content | markdownify }}</p>
+            <div class="skill-bars">
+              <!-- SkillBar -->
+              {{ range .skillbars }}
+              <div class="skill-bar">
+                <p>{{ .name | markdownify }}</p>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" style="width: {{ .percentage }};"><span>{{ .percentage }}</span></div>
+                </div>
+              </div>
+              {{ end }}
+              </div>
+            </div>
+          </div>
+        </div>
+        {{ end }}
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}
